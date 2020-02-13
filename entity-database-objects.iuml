@@ -1,0 +1,18 @@
+' Macros for Entity/Class diagrams
+' 
+
+hide circle
+skinparam linetype ortho
+
+' Functions defining Tables 
+' usage: 
+'   TABLE(table_name)
+'   TABLE(table_name, alias)
+
+!unquoted function TABLE($name)
+entity "**$name **" as $name << (T, white) >>
+!endfunction
+
+!unquoted function TABLE($name, $alias)
+entity "**$name //($alias)//**" as $name << (T, white) >>
+!endfunction
