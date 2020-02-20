@@ -27,9 +27,9 @@ class "**$name //($alias)//**" as $name << (O, white) >>
 !endfunction
 
 !unquoted function NOTFINAL_OBJECT($name)
-abstract class "**$name **" as $name << (O, white) >>
+abstract OBJECT($name)
 !endfunction
 
 !unquoted function NOTFINAL_OBJECT($name, $alias)
-abstract class "**$name //($alias)//**" as $name << (O, white) >>
+abstract OBJECT($name, $alias)
 !endfunction
