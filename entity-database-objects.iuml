@@ -1,5 +1,6 @@
 ' Macros for Entity/Class diagrams
-' 
+' Author:           Matthew Billington
+' Modified date:    20-FEB-2020
 
 hide circle
 skinparam linetype ortho
@@ -15,4 +16,20 @@ entity "**$name **" as $name << (T, white) >>
 
 !unquoted function TABLE($name, $alias)
 entity "**$name //($alias)//**" as $name << (T, white) >>
+!endfunction
+
+!unquoted function OBJECT($name)
+class "**$name **" as $name << (O, white) >>
+!endfunction
+
+!unquoted function OBJECT($name, $alias)
+class "**$name //($alias)//**" as $name << (O, white) >>
+!endfunction
+
+!unquoted function NOTFINAL_OBJECT($name)
+abstract class "**$name **" as $name << (O, white) >>
+!endfunction
+
+!unquoted function NOTFINAL_OBJECT($name, $alias)
+abstract class "**$name //($alias)//**" as $name << (O, white) >>
 !endfunction
