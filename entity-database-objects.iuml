@@ -11,25 +11,46 @@ skinparam linetype ortho
 '   TABLE(table_name, alias)
 
 !unquoted function TABLE($name)
-entity "**$name **" as $name << (T, white) >>
+!return entity "**$name **" as $name << (T, white) >>
 !endfunction
 
 !unquoted function TABLE($name, $alias)
-entity "**$name //($alias)//**" as $name << (T, white) >>
+!return entity "**$name //($alias)//**" as $name << (T, white) >>
+!endfunction
+
+!unquoted function VIEW($name)
+!return entity "**$name **" as $name << (V, green) >>
+!endfunction
+
+!unquoted function VIEW($name, $alias)
+!return entity "**$name //($alias)//**" as $name << (V, green) >>
 !endfunction
 
 !unquoted function OBJECT($name)
-class "**$name **" as $name << (O, white) >>
+!return class "**$name **" as $name << (O, white) >>
 !endfunction
 
 !unquoted function OBJECT($name, $alias)
-class "**$name //($alias)//**" as $name << (O, white) >>
+!return class "**$name //($alias)//**" as $name << (O, white) >>
 !endfunction
 
 !unquoted function NOTFINAL_OBJECT($name)
-abstract OBJECT($name)
+!return abstract OBJECT($name)
 !endfunction
 
 !unquoted function NOTFINAL_OBJECT($name, $alias)
-abstract OBJECT($name, $alias)
+!return abstract OBJECT($name, $alias)
 !endfunction
+
+' Column functions
+
+' Primary key
+!unquoted function PK($column)
+!return + [pk] $column
+!endfunction
+
+' Foreign key
+!unquoted function PK($column)
+!return # [fk] $column
+!endfunction
+
