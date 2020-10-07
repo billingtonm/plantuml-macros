@@ -5,52 +5,52 @@
 hide circle
 skinparam linetype ortho
 
-' Functions defining Tables 
+' procedures defining Tables 
 ' usage: 
 '   TABLE(table_name)
 '   TABLE(table_name, alias)
 
-!unquoted function TABLE($name)
-!return entity "**$name **" as $name << (T, white) >>
-!endfunction
+!unquoted procedure TABLE($name)
+entity "**$name **" as $name << (T, white) >>
+!endprocedure
 
-!unquoted function TABLE($name, $alias)
-!return entity "**$name //($alias)//**" as $name << (T, white) >>
-!endfunction
+!unquoted procedure TABLE($name, $alias)
+entity "**$name //($alias)//**" as $name << (T, white) >>
+!endprocedure
 
-!unquoted function VIEW($name)
-!return entity "**$name **" as $name << (V, green) >>
-!endfunction
+!unquoted procedure VIEW($name)
+entity "**$name **" as $name << (V, green) >>
+!endprocedure
 
-!unquoted function VIEW($name, $alias)
-!return entity "**$name //($alias)//**" as $name << (V, green) >>
-!endfunction
+!unquoted procedure VIEW($name, $alias)
+entity "**$name //($alias)//**" as $name << (V, green) >>
+!endprocedure
 
-!unquoted function OBJECT($name)
-!return class "**$name **" as $name << (O, white) >>
-!endfunction
+!unquoted procedure OBJECT($name)
+class "**$name **" as $name << (O, white) >>
+!endprocedure
 
-!unquoted function OBJECT($name, $alias)
-!return class "**$name //($alias)//**" as $name << (O, white) >>
-!endfunction
+!unquoted procedure OBJECT($name, $alias)
+class "**$name //($alias)//**" as $name << (O, white) >>
+!endprocedure
 
-!unquoted function NOTFINAL_OBJECT($name)
-!return abstract OBJECT($name)
-!endfunction
+!unquoted procedure NOTFINAL_OBJECT($name)
+abstract OBJECT($name)
+!endprocedure
 
-!unquoted function NOTFINAL_OBJECT($name, $alias)
-!return abstract OBJECT($name, $alias)
-!endfunction
+!unquoted procedure NOTFINAL_OBJECT($name, $alias)
+abstract OBJECT($name, $alias)
+!endprocedure
 
-' Column functions
+' Column procedures
 
 ' Primary key
-!unquoted function PK($column)
-!return + [pk] $column
-!endfunction
+!unquoted procedure PK($column)
++ [pk] $column
+!endprocedure
 
 ' Foreign key
-!unquoted function PK($column)
-!return # [fk] $column
-!endfunction
+!unquoted procedure PK($column)
+# [fk] $column
+!endprocedure
 
